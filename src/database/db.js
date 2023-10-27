@@ -1,8 +1,9 @@
 import { Sequelize } from 'sequelize'
+import 'dotenv/config'
 
-const db = new Sequelize('postgres', 'postgres', 'FreeFire10', {
+const db = new Sequelize(process.env.NOME_BANCO, process.env.NOME_USER, process.env.SENHA_BANCO, {
     host: 'localhost',
-    dialect: 'postgres'
+    dialect: process.env.BANCO
 })
 
 export default db
